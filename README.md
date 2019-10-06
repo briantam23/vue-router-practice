@@ -1,4 +1,4 @@
-# vue-router-practice
+# Vue Router Practice
 
 > A Vue.js project
 

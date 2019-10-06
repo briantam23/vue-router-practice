@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-md-4 col-lg4" v-for="(data,index) in products" :key="index">
         <img :src="data.image" class="img-fluid">
-         <h3 @click="goTodetail()">{{data.productTitle}}</h3>
+         <h3 @click="goTodetail(data.productId)" >{{data.productTitle}}</h3>
       </div>
     </div>
   </div>
@@ -50,12 +50,19 @@ export default {
     }
   },
   methods: {
-    goTodetail () {
-      this.$router.push({name: 'details'})
+    goTodetail (proId) {
+      this.$router.push({name: 'details', params: { Pid: proId }})
     }
   }
 }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .row img{
+    max-height: 15em;
+    width: 100%;
+  }
+  .row h3{
+    cursor:pointer;
+  }
 </style>
